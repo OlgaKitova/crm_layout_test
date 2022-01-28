@@ -1,3 +1,102 @@
-.App {
-    text-align: center;
+//Для переиспользования
+%font {
+padding: 0;
+margin: 0;
+color: #000000;
+font-size: 22px;
+line-height: 29px;
+font-weight: 400;
 }
+%flex-wrapper {
+    height: 2.5rem;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+%circle {
+    background-color: #c4c4c4;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+%point {
+        margin: 50% 0;
+        font-size: 19px;
+        line-height: 0;
+        transform: translate(0,-50%);
+    }
+@font-face {
+	font-family: 'Arial'; 
+	src: url(../fonts/arialmt.ttf); 
+}
+//Total style
+html,body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    box-sizing: border-box;
+}
+.App {
+    @extend %font;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul, li, h1, h2, h3, h4 {
+    @extend %font;
+    white-space: nowrap;
+}
+li {
+    list-style: none;
+}
+//Sidebar
+.sidebar {
+    padding: 10px;
+    background-color: #f3f3f3;
+    max-width: 100%;
+    width: 13rem;
+    height: 100vh;
+    position: fixed;
+    border-right: 3px solid #5e5e5e;
+    transition: width 0.7s ease-in;
+    &__header {
+        @extend %flex-wrapper;
+        padding-bottom: 2rem
+    }
+    &__logo {
+      @extend %circle;
+      margin-right: 0.5rem;
+        h4 {
+       @extend %point;
+        }
+    }
+    &__point {
+        @extend %flex-wrapper;
+        text-transform: capitalize;
+        width: 13rem;
+        .list__img {
+            @extend %circle;
+            margin-right: 1rem;
+        }
+        h4 {
+            cursor: pointer;
+            opacity: 1;
+            transition: opacity 1.5s ease-in;
+        }
+    }
+}
+//Если sidebar закрыт
+ .hide-sidebar {
+ width: 60px;
+ transition: width 0.7s ease-in;
+ .sidebar__header h1,
+ .sidebar__point h4 {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+ }

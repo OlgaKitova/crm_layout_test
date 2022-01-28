@@ -1,11 +1,14 @@
-import '../styles/index.css'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import LayoutScreen from "../screens/LayoutScreen";
+import '../styles/index.css';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      hello
+      <Routes>
+        <Route path="/" element={<LayoutScreen />} />
+      </Routes>
         </div>
   );
 }
-
-export default App;

@@ -1,4 +1,119 @@
+.App, ul, li, h1, h2, h3, h4 {
+  padding: 0;
+  margin: 0;
+  color: #000000;
+  font-size: 22px;
+  line-height: 29px;
+  font-weight: 400;
+}
+
+.sidebar__header, .sidebar__point {
+  height: 2.5rem;
+  padding: 0.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.sidebar__logo, .sidebar__point .list__img {
+  background-color: #c4c4c4;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sidebar__logo h4 {
+  margin: 50% 0;
+  font-size: 19px;
+  line-height: 0;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: url(../fonts/arialmt.ttf);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul, li, h1, h2, h3, h4 {
+  white-space: nowrap;
+}
+
+li {
+  list-style: none;
+}
+
+.sidebar {
+  padding: 10px;
+  background-color: #f3f3f3;
+  max-width: 100%;
+  width: 13rem;
+  height: 100vh;
+  position: fixed;
+  border-right: 3px solid #5e5e5e;
+  -webkit-transition: width 0.7s ease-in;
+  transition: width 0.7s ease-in;
+}
+
+.sidebar__header {
+  padding-bottom: 2rem;
+}
+
+.sidebar__logo {
+  margin-right: 0.5rem;
+}
+
+.sidebar__point {
+  text-transform: capitalize;
+  width: 13rem;
+}
+
+.sidebar__point .list__img {
+  margin-right: 1rem;
+}
+
+.sidebar__point h4 {
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: opacity 1.5s ease-in;
+  transition: opacity 1.5s ease-in;
+}
+
+.hide-sidebar {
+  width: 60px;
+  -webkit-transition: width 0.7s ease-in;
+  transition: width 0.7s ease-in;
+}
+
+.hide-sidebar .sidebar__header h1,
+.hide-sidebar .sidebar__point h4 {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in;
 }
 /*# sourceMappingURL=index.css.map */
