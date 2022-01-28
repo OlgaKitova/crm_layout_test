@@ -9,7 +9,12 @@ export default function SideBar() {
     const showLogoImg = false;
     const sidebar = useSelector(state => state.sidebar.value);
     const dispatch = useDispatch();
-  return <nav className={sidebar ? 'sidebar': 'sidebar hide-sidebar'} onMouseEnter={() => {
+  return <nav className={sidebar ? 'sidebar': 'sidebar hide-sidebar'} 
+  onMouseEnter={() => {
+    dispatch(hideShowSidebar());
+    return
+  }}
+  onMouseLeave={() => {
     dispatch(hideShowSidebar());
     return
   }}>

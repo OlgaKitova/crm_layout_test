@@ -5,6 +5,6 @@ import SideBar from '../components/SideBar';
 export default function LayoutScreen() {
   return (<div> 
       <SideBar />
-      <Header />
+      <Header surname="Петров В. А."/>
   </div>)
 }

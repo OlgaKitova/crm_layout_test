@@ -47,7 +47,7 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-ul, li, h1, h2, h3, h4 {
+ul, li, h1, h2, h3, h4, input {
     @extend %font;
     white-space: nowrap;
 }
@@ -56,6 +56,7 @@ li {
 }
 //Sidebar
 .sidebar {
+    z-index: 1;
     padding: 10px;
     background-color: #f3f3f3;
     max-width: 100%;
@@ -76,9 +77,13 @@ li {
         }
     }
     &__point {
+    .list__link {
+        @extend %font;
         @extend %flex-wrapper;
         text-transform: capitalize;
         width: 13rem;
+        text-decoration: none;
+    }
         .list__img {
             @extend %circle;
             margin-right: 1rem;
@@ -100,3 +105,53 @@ li {
     transition: opacity 0.5s ease-in;
 }
  }
+
+// Смещение контента
+.leftShift {
+    padding: 0 0 0 15rem;
+    transition: padding 0.7s ease-in;
+}
+.rightShift {
+    padding: 0 0 0 7rem;
+    transition: padding 0.7s ease-in;
+}
+// Input
+.input {
+    padding-left: 0.7rem;
+    border: none;
+    border-bottom: 1.5px solid #000000;
+    background-color: #f3f3f3;
+    color: #000000;
+    width: 7.5rem;
+    outline: none;
+}
+.input::-moz-placeholder { color: #000000; }
+.input::-webkit-input-placeholder { color: #000000; }
+
+// Header
+.header {
+    position: fixed;
+    overflow: hidden;
+    width: 100vw;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f3f3f3;
+    .user {
+        @extend %font;
+        text-decoration: none;
+        display: flex;
+        width: 12rem;
+        justify-content: space-evenly;
+        align-items: center;
+        &__avatar {
+            @extend %circle;
+            h4 {
+                @extend %point;
+                font-size: 22px;
+                text-align: center;
+                 }
+        }
+    }
+}
