@@ -91,6 +91,7 @@ li {
         h4 {
             cursor: pointer;
             opacity: 1;
+            transform: translate(0);
             transition: opacity 1.5s ease-in;
         }
     }
@@ -99,9 +100,17 @@ li {
  .hide-sidebar {
  width: 60px;
  transition: width 0.7s ease-in;
+ .list__link {
+    width: 60px;
+    transition: width 0.5s ease-in;
+ }
+ .list__img {
+    margin-right: -9rem;
+ }
  .sidebar__header h1,
- .sidebar__point h4 {
+ .sidebar__point .list__link h4 {
     opacity: 0;
+    transform: translate(-500px);
     transition: opacity 0.5s ease-in;
 }
  }
@@ -119,11 +128,12 @@ li {
 .input {
     padding-left: 0.7rem;
     border: none;
-    border-bottom: 1.5px solid #000000;
-    background-color: #f3f3f3;
+    border-bottom: 2px solid #000000;
+    background-color: rgba(0,0,0,0);
     color: #000000;
-    width: 7.5rem;
+    width: 8rem;
     outline: none;
+    font-size: 20px;
 }
 .input::-moz-placeholder { color: #000000; }
 .input::-webkit-input-placeholder { color: #000000; }
@@ -155,3 +165,67 @@ li {
         }
     }
 }
+//Filter
+.filter {
+    position: fixed;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    height: 1rem;
+    transition: height 0.6s ease-out;
+    width: 100vw;
+    border-bottom: 3px solid #5e5e5e;
+    overflow: hidden;
+    .leftShift &__head {
+        width: 83vw;
+        transition: width 0.6s ease-out;
+    }
+    &__head {
+    position: relative;
+    width: 91.5vw;
+    transition: width 0.6s ease-out;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+    }
+    &__title {
+        text-transform: uppercase;
+    }
+    &__img {
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        img {
+            display: block;
+            width: inherit;
+            height: inherit;
+        }
+    }
+    &__block {
+        display: flex;
+        width: 100%;
+        height: inherit;
+        &--one {
+            margin-left: -1rem;
+        }
+        &--one, 
+        &--two {
+        display: flex;
+        width: 100%;
+        height: inherit;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        flex: 0 1 25%;
+        }
+        @media (max-width: 880px) {
+            &--one, 
+            &--two {
+                flex: 0 1 37%;
+        }
+        }
+    }
+}
+.showFilter {
+    height: 9rem;
+    transition: height 0.6s ease-out;
+ }
