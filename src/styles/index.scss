@@ -40,6 +40,7 @@ html,body {
 }
 body {
     box-sizing: border-box;
+    overflow: hidden;
 }
 .App {
     @extend %font;
@@ -56,7 +57,7 @@ li {
 }
 //Sidebar
 .sidebar {
-    z-index: 1;
+    z-index: 3;
     padding: 10px;
     background-color: #f3f3f3;
     max-width: 100%;
@@ -148,6 +149,7 @@ li {
     justify-content: space-between;
     align-items: center;
     background-color: #f3f3f3;
+    z-index: 2;
     .user {
         @extend %font;
         text-decoration: none;
@@ -175,6 +177,8 @@ li {
     width: 100vw;
     border-bottom: 3px solid #5e5e5e;
     overflow: hidden;
+    background-color: #ffffff;
+    z-index: 1;
     .leftShift &__head {
         width: 83vw;
         transition: width 0.6s ease-out;
@@ -229,3 +233,24 @@ li {
     height: 9rem;
     transition: height 0.6s ease-out;
  }
+// Main
+.main {
+    height: calc(100vh - 7rem);
+    padding-top: 7rem;
+    transition: all 0.7s ease-out;
+&__wrapper {
+    height: inherit;
+    padding-left: 7rem;
+    overflow: auto;
+    transition: all 0.7s ease-out;
+}
+.sidebarMain &__wrapper {
+    padding-left: 15rem;
+    transition: all 0.7s ease-out;
+}
+}
+.filterMain {
+    height: calc(100vh - 15rem);
+    padding-top: 15rem;
+    transition: all 0.7s ease-out;
+}
