@@ -179,13 +179,9 @@ li {
     overflow: hidden;
     background-color: #ffffff;
     z-index: 1;
-    .leftShift &__head {
-        width: 83vw;
-        transition: width 0.6s ease-out;
-    }
     &__head {
     position: relative;
-    width: 91.5vw;
+    width: inherit;
     transition: width 0.6s ease-out;
     justify-content: space-between;
     align-items: center;
@@ -196,6 +192,9 @@ li {
         text-transform: uppercase;
     }
     &__img {
+        position: absolute;
+        top: 0;
+        right: 134px;
         width: 15px;
         height: 15px;
         cursor: pointer;
@@ -204,6 +203,9 @@ li {
             width: inherit;
             height: inherit;
         }
+    }
+    .leftShift &__img {
+        right: 262px;
     }
     &__block {
         display: flex;
@@ -221,7 +223,13 @@ li {
         flex-wrap: wrap;
         flex: 0 1 25%;
         }
-        @media (max-width: 880px) {
+        @media (max-width: 1220px) {
+            &--one, 
+            &--two {
+                flex: 0 1 30%;
+        }
+        }
+        @media (max-width: 930px) {
             &--one, 
             &--two {
                 flex: 0 1 37%;

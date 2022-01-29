@@ -6,7 +6,12 @@ export default function MainContent() {
     const filterblock = useSelector(state => state.filterblock.value);
 
   return <main className={
-      sidebar && filterblock ? 'main filterMain sidebarMain' : sidebar ? 'main sidebarMain' : filterblock ? 'main filterMain' : 'main'
+      sidebar && filterblock 
+      ? 'main filterMain sidebarMain' 
+      : sidebar 
+      ? 'main sidebarMain' 
+      : filterblock 
+      ? 'main filterMain' : 'main'
   }>
   <section className="main__wrapper">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed sem metus. Quisque quis dapibus orci. In sem augue, mollis rutrum tincidunt sollicitudin, bibendum vitae lectus. Nullam vel fringilla ex. Nullam vitae interdum purus. Integer hendrerit, eros non tempus bibendum, augue lorem sollicitudin dui, sit amet rutrum augue tellus vitae felis. Proin ut tellus rhoncus, dapibus dolor malesuada, bibendum lacus. Ut maximus mi at quam tristique, quis egestas odio aliquam. Phasellus scelerisque mattis lorem a egestas. Fusce nec ante nec nisl cursus vulputate. Phasellus in malesuada nulla.</p>

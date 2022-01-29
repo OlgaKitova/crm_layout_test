@@ -28,7 +28,6 @@ export default function FilterBlock() {
       <div className="filter__head">
       <h2 className="filter__title">Filter Block</h2>
       <div className="filter__img" onClick={() => {
-          console.log(filterblock)
           dispatch(hideShowFilter())
       }}>
           <img src="./img/gear.png" alt="gear"/>
